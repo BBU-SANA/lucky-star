@@ -12,7 +12,7 @@
 			        <li class="has_sub">
                         <a href="javascript:void(0);" class="waves-effect active"><i class="ti-home"></i> <span> Dashboard </span> <span class="menu-arrow"></span></a>
                         <ul class="list-unstyled">
-                            <li><a href="http://localhost:2222/lucky-star-computer/" target="_new">View Page</a></li>
+                            <li><a href="http://localhost:2222/lucky-star-computer-php/" target="_new">View Page</a></li>
                         </ul>
                     </li>
 
@@ -54,10 +54,9 @@
                     </li>
 
                     <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class=" ti-receipt"></i> <span> Receipts </span> <span class="menu-arrow"></span></a>
+                        <a href="javascript:void(0);" class="waves-effect"><i class=" ti-receipt"></i> <span> Invoices </span> <span class="menu-arrow"></span></a>
                         <ul class="list-unstyled">
-                            <li><a href="index-2.html">Orders List</a></li>
-                            <li><a href="dashboard_2.html">Add Receipt</a></li>
+                            <li><a href="index-2.html">Sale Invoice</a></li>
                         </ul>
                     </li>
                 </ul>
