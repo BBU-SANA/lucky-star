@@ -27,6 +27,7 @@ class Example extends CI_Controller {
 
 	public function example_1()
 	{
+		$this->output->set_title('test');
 		$this->load->view('ci_simplicity/example_1');
 	}
 

@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Dashboard</title>
-<?php $this->load->view('admin/layouts/header') ?>
-
-<?php $this->load->view('admin/layouts/slidemenu') ?>
-
-	<!-- ============================================================== -->
-    <!-- Start right Content here -->
-    <!-- ============================================================== -->                      
+    
     <div class="content-page">
         <!-- Start content -->
         <div class="content">
@@ -54,33 +44,33 @@
                 </div>
                 
                 <div class="row">
-                	<div class="col-lg-12">
-                		<div class="card-box">
-                			<h4 class="text-dark header-title m-t-0">Total Revenue</h4>
-                			
-                			<div class="row">
-                				<div class="col-md-8">
-                					<div class="text-center">
-										<ul class="list-inline chart-detail-list">
-											<li>
-												<h5><i class="fa fa-circle m-r-5" style="color: #36404a;"></i>Desktops</h5>
-											</li>
-											<li>
-												<h5><i class="fa fa-circle m-r-5" style="color: #5d9cec;"></i>Tablets</h5>
-											</li>
+                    <div class="col-lg-12">
+                        <div class="card-box">
+                            <h4 class="text-dark header-title m-t-0">Total Revenue</h4>
+                            
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="text-center">
+                                        <ul class="list-inline chart-detail-list">
                                             <li>
-												<h5><i class="fa fa-circle m-r-5" style="color: #bbbbbb;"></i>Mobiles</h5>
-											</li>
-										</ul>
-									</div>
-									
-									<div id="morris-area-with-dotted" style="height: 300px;"></div>
+                                                <h5><i class="fa fa-circle m-r-5" style="color: #36404a;"></i>Desktops</h5>
+                                            </li>
+                                            <li>
+                                                <h5><i class="fa fa-circle m-r-5" style="color: #5d9cec;"></i>Tablets</h5>
+                                            </li>
+                                            <li>
+                                                <h5><i class="fa fa-circle m-r-5" style="color: #bbbbbb;"></i>Mobiles</h5>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div id="morris-area-with-dotted" style="height: 300px;"></div>
 
-                				</div>
-                				
-                				
-                				
-                				 <div class="col-md-4">
+                                </div>
+                                
+                                
+                                
+                                 <div class="col-md-4">
                                     
                                     <p class="font-600">iMacs <span class="text-primary pull-right">80%</span></p>
                                     <div class="progress m-b-30">
@@ -117,11 +107,11 @@
                                 
                                 
                                 
-                			</div>
-                			
-                			<!-- end row -->
-                			
-                		</div>
+                            </div>
+                            
+                            <!-- end row -->
+                            
+                        </div>
                         
                     </div>
                             
@@ -132,15 +122,15 @@
                 
                 
                 <div class="row">
-                	<div class="col-lg-6">
-                		<div class="card-box">
+                    <div class="col-lg-6">
+                        <div class="card-box">
                             <a href="#" class="pull-right btn btn-default btn-sm waves-effect waves-light">View All</a>
-                			<h4 class="text-dark header-title m-t-0">Recent Orders</h4>
-                			<p class="text-muted m-b-30 font-13">
-								Your awesome text goes here.
-							</p>
+                            <h4 class="text-dark header-title m-t-0">Recent Orders</h4>
+                            <p class="text-muted m-b-30 font-13">
+                                Your awesome text goes here.
+                            </p>
 
-                			<div class="table-responsive">
+                            <div class="table-responsive">
                                 <table class="table table-actions-bar">
                                     <thead>
                                         <tr>
@@ -158,8 +148,8 @@
                                             <td><a href="#">UB#160924</a></td>
                                             <td>$1,256</td>
                                             <td>
-                                            	<a href="#" class="table-action-btn"><i class="md md-edit"></i></a>
-                                            	<a href="#" class="table-action-btn"><i class="md md-close"></i></a>
+                                                <a href="#" class="table-action-btn"><i class="md md-edit"></i></a>
+                                                <a href="#" class="table-action-btn"><i class="md md-close"></i></a>
                                             </td>
                                         </tr>
 
@@ -169,8 +159,8 @@
                                             <td><a href="#">UB#160923</a></td>
                                             <td>$2,562</td>
                                             <td>
-                                            	<a href="#" class="table-action-btn"><i class="md md-edit"></i></a>
-                                            	<a href="#" class="table-action-btn"><i class="md md-close"></i></a>
+                                                <a href="#" class="table-action-btn"><i class="md md-edit"></i></a>
+                                                <a href="#" class="table-action-btn"><i class="md md-close"></i></a>
                                             </td>
                                         </tr>
 
@@ -180,8 +170,8 @@
                                             <td><a href="#">UB#160922</a></td>
                                             <td>$6,458</td>
                                             <td>
-                                            	<a href="#" class="table-action-btn"><i class="md md-edit"></i></a>
-                                            	<a href="#" class="table-action-btn"><i class="md md-close"></i></a>
+                                                <a href="#" class="table-action-btn"><i class="md md-edit"></i></a>
+                                                <a href="#" class="table-action-btn"><i class="md md-close"></i></a>
                                             </td>
                                         </tr>
 
@@ -191,8 +181,8 @@
                                             <td><a href="#">UB#160921</a></td>
                                             <td>$1,256</td>
                                             <td>
-                                            	<a href="#" class="table-action-btn"><i class="md md-edit"></i></a>
-                                            	<a href="#" class="table-action-btn"><i class="md md-close"></i></a>
+                                                <a href="#" class="table-action-btn"><i class="md md-edit"></i></a>
+                                                <a href="#" class="table-action-btn"><i class="md md-close"></i></a>
                                             </td>
                                         </tr>
 
@@ -202,8 +192,8 @@
                                             <td><a href="#">UB#160920</a></td>
                                             <td>$7,521</td>
                                             <td>
-                                            	<a href="#" class="table-action-btn"><i class="md md-edit"></i></a>
-                                            	<a href="#" class="table-action-btn"><i class="md md-close"></i></a>
+                                                <a href="#" class="table-action-btn"><i class="md md-edit"></i></a>
+                                                <a href="#" class="table-action-btn"><i class="md md-close"></i></a>
                                             </td>
                                         </tr>
 
@@ -213,8 +203,8 @@
                                             <td><a href="#">UB#160920</a></td>
                                             <td>$7,521</td>
                                             <td>
-                                            	<a href="#" class="table-action-btn"><i class="md md-edit"></i></a>
-                                            	<a href="#" class="table-action-btn"><i class="md md-close"></i></a>
+                                                <a href="#" class="table-action-btn"><i class="md md-edit"></i></a>
+                                                <a href="#" class="table-action-btn"><i class="md md-close"></i></a>
                                             </td>
                                         </tr>
 
@@ -222,19 +212,19 @@
                                 </table>
                             </div>
 
-                		</div>
-                	</div> <!-- end col -->
+                        </div>
+                    </div> <!-- end col -->
 
 
                     <div class="col-lg-6">
-                		<div class="card-box">
+                        <div class="card-box">
                             <a href="#" class="pull-right btn btn-default btn-sm waves-effect waves-light">View All</a>
-                			<h4 class="text-dark header-title m-t-0">Popular Products</h4>
-                			<p class="text-muted m-b-30 font-13">
-								Your awesome text goes here.
-							</p>
+                            <h4 class="text-dark header-title m-t-0">Popular Products</h4>
+                            <p class="text-muted m-b-30 font-13">
+                                Your awesome text goes here.
+                            </p>
 
-                			<div class="table-responsive">
+                            <div class="table-responsive">
                                 <table class="table table-actions-bar">
                                     <thead>
                                         <tr>
@@ -252,8 +242,8 @@
                                             <td><b>22</b></td>
                                             <td>$1,256</td>
                                             <td>
-                                            	<a href="#" class="table-action-btn"><i class="md md-edit"></i></a>
-                                            	<a href="#" class="table-action-btn"><i class="md md-close"></i></a>
+                                                <a href="#" class="table-action-btn"><i class="md md-edit"></i></a>
+                                                <a href="#" class="table-action-btn"><i class="md md-close"></i></a>
                                             </td>
                                         </tr>
 
@@ -263,8 +253,8 @@
                                             <td><b>35</b></td>
                                             <td>$2,562</td>
                                             <td>
-                                            	<a href="#" class="table-action-btn"><i class="md md-edit"></i></a>
-                                            	<a href="#" class="table-action-btn"><i class="md md-close"></i></a>
+                                                <a href="#" class="table-action-btn"><i class="md md-edit"></i></a>
+                                                <a href="#" class="table-action-btn"><i class="md md-close"></i></a>
                                             </td>
                                         </tr>
 
@@ -274,8 +264,8 @@
                                             <td><b>20</b></td>
                                             <td>$6,458</td>
                                             <td>
-                                            	<a href="#" class="table-action-btn"><i class="md md-edit"></i></a>
-                                            	<a href="#" class="table-action-btn"><i class="md md-close"></i></a>
+                                                <a href="#" class="table-action-btn"><i class="md md-edit"></i></a>
+                                                <a href="#" class="table-action-btn"><i class="md md-close"></i></a>
                                             </td>
                                         </tr>
 
@@ -285,8 +275,8 @@
                                             <td><b>5</b></td>
                                             <td>$1,256</td>
                                             <td>
-                                            	<a href="#" class="table-action-btn"><i class="md md-edit"></i></a>
-                                            	<a href="#" class="table-action-btn"><i class="md md-close"></i></a>
+                                                <a href="#" class="table-action-btn"><i class="md md-edit"></i></a>
+                                                <a href="#" class="table-action-btn"><i class="md md-close"></i></a>
                                             </td>
                                         </tr>
 
@@ -296,8 +286,8 @@
                                             <td><b>10</b></td>
                                             <td>$7,521</td>
                                             <td>
-                                            	<a href="#" class="table-action-btn"><i class="md md-edit"></i></a>
-                                            	<a href="#" class="table-action-btn"><i class="md md-close"></i></a>
+                                                <a href="#" class="table-action-btn"><i class="md md-edit"></i></a>
+                                                <a href="#" class="table-action-btn"><i class="md md-close"></i></a>
                                             </td>
                                         </tr>
 
@@ -307,8 +297,8 @@
                                             <td><b>7</b></td>
                                             <td>$7,521</td>
                                             <td>
-                                            	<a href="#" class="table-action-btn"><i class="md md-edit"></i></a>
-                                            	<a href="#" class="table-action-btn"><i class="md md-close"></i></a>
+                                                <a href="#" class="table-action-btn"><i class="md md-edit"></i></a>
+                                                <a href="#" class="table-action-btn"><i class="md md-close"></i></a>
                                             </td>
                                         </tr>
 
@@ -316,8 +306,8 @@
                                 </table>
                             </div>
 
-                		</div>
-                	</div> <!-- end col -->
+                        </div>
+                    </div> <!-- end col -->
 
 
 
@@ -326,10 +316,13 @@
                 
 
             </div> <!-- container -->
+
+
                        
         </div> <!-- content -->
+    </div>
 
-        <!-- Right Sidebar -->
+    <!-- Right Sidebar -->
     <div class="side-bar right-bar nicescroll">
         <h4 class="text-center">Chat</h4>
         <div class="contact-list nicescroll">
@@ -438,5 +431,3 @@
         </div>
     </div>
     <!-- /Right-bar -->
-
-<?php $this->load->view('admin/layouts/footer') ?>

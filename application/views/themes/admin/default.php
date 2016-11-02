@@ -1,25 +1,64 @@
-	  <meta charset="utf-8">
+<!DOCTYPE html>
+<html>
+<head>
+    <title><?php echo $title; ?></title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
     <meta name="author" content="Coderthemes">
-    <link rel="shortcut icon" href="<?=base_url();?>public/assets/images/favicon_1.ico">
 
-    <!-- link to css url -->
-    <?php $this->load->view('admin/layouts/head-url') ?>
+    <link rel="shortcut icon" href="<?=base_url();?>/public/assets/images/favicon_1.ico">
+
+<?php
+
+  if(!empty($meta))
+  foreach($meta as $name=>$content){
+    echo "\n\t\t";
+    ?><meta name="<?php echo $name; ?>" content="<?php echo $content; ?>" /><?php
+  }
+  echo "\n";
+
+  foreach($css as $file){
+    echo "\n\t\t";
+    ?><link rel="stylesheet" href="<?php echo $file; ?>" type="text/css" /><?php
+  } echo "\n\t";
+
+?>
     
+    <!--Morris Chart CSS -->
+    <link rel="stylesheet" href="<?=base_url();?>public/assets/plugins/morris/morris.css">
+
+    <link href="<?=base_url();?>public/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?=base_url();?>public/assets/css/core.css" rel="stylesheet" type="text/css" />
+    <link href="<?=base_url();?>public/assets/css/components.css" rel="stylesheet" type="text/css" />
+    <link href="<?=base_url();?>public/assets/css/icons.css" rel="stylesheet" type="text/css" />
+    <link href="<?=base_url();?>public/assets/css/pages.css" rel="stylesheet" type="text/css" />
+    <link href="<?=base_url();?>public/assets/css/responsive.css" rel="stylesheet" type="text/css" />
+
+    <script src="<?=base_url();?>public/assets/js/modernizr.min.js"></script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','../../../www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-69506598-1', 'auto');
+          ga('send', 'pageview');
+    </script>
+
 </head>
 <body class="fixed-left">
 
 <!-- Begin page -->
 <div id="wrapper">
-
-    <!-- Top Bar Start -->
+   <!-- Top Bar Start -->
     <div class="topbar">
 
         <!-- LOGO -->
         <div class="topbar-left">
             <div class="text-center">
-                <a href="index" class="logo"><i class="icon-magnet icon-c-logo"></i><span>Ub<i class="md md-album"></i>ld</span></a>
+                <a href="<?php echo site_url('admin');?>" class="logo"><i class="icon-magnet icon-c-logo"></i><span>Ub<i class="md md-album"></i>ld</span></a>
             </div>
         </div>
 
@@ -162,3 +201,132 @@
         </div>
     </div>
     <!-- Top Bar End -->
+
+    <!-- ========== Left Sidebar Start ========== -->
+
+    <div class="left side-menu">
+        <div class="sidebar-inner slimscrollleft">
+            <!--- Divider -->
+            <div id="sidebar-menu">
+                <ul>
+
+                  <!-- <li class="text-muted menu-title">Navigation</li> -->
+
+              <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect active"><i class="ti-home"></i> <span> Dashboard </span> <span class="menu-arrow"></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="http://localhost:2222/lucky-star-computer-php/" target="_new">View Page</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect"><i class="ti-user"></i> <span> Users </span> <span class="menu-arrow"></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="<?php echo site_url('admin/viewuser');?>">Users List</a></li>
+                            <li><a href="<?php echo site_url('admin/adduser');?>">Add Users</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect"><i class="ti-pencil-alt"></i> <span> Categories </span> <span class="menu-arrow"></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="<?php echo site_url('admin/viewcategory');?>">Categories List</a></li>
+                            <li><a href="<?php echo site_url('admin/viewbrand');?>">Brands List</a></li>
+                            <li><a href="<?php echo site_url('admin/addcategory');?>">Add New</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect"><i class=" ti-briefcase"></i> <span> Products </span> <span class="menu-arrow"></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="<?php echo site_url('admin/viewproduct');?>">Products List</a></li>
+                            <li><a href="<?php echo site_url('admin/addproduct');?>">Add Products</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect"><i class="ti-shopping-cart"></i> <span> Selling </span> <span class="menu-arrow"></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="<?php echo site_url('admin/viewsell');?>">Selling List</a></li>
+                            <li><a href="<?php echo site_url('admin/addsell');?>">Add Selling</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has_sub">
+                        <a href="<?php echo site_url('admin/sellhistory');?>" class="waves-effect"><i class=" ti-check-box"></i> <span> Sell History </span></a>
+                    </li>
+
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect"><i class=" ti-receipt"></i> <span> Invoices </span> <span class="menu-arrow"></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="<?php echo site_url('admin/invoice');?>">Sale Invoice</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- Left Sidebar End --> 
+
+    <?php echo $output;?>
+
+    <!-- footer -->
+    <footer class="footer text-right">
+        © 2016. All rights reserved.
+    </footer>
+    
+    <!-- ============================================================== -->
+    <!-- End Right content here -->
+    <!-- ============================================================== -->
+
+</div>
+<!-- END wrapper -->
+
+</body>
+  <script>
+      var resizefunc = [];
+  </script>
+
+  <!-- jQuery  -->
+  <script src="<?=base_url();?>/public/assets/js/jquery.min.js"></script>
+  <script src="<?=base_url();?>/public/assets/js/bootstrap.min.js"></script>
+  <script src="<?=base_url();?>/public/assets/js/detect.js"></script>
+  <script src="<?=base_url();?>/public/assets/js/fastclick.js"></script>
+  <script src="<?=base_url();?>/public/assets/js/jquery.slimscroll.js"></script>
+  <script src="<?=base_url();?>/public/assets/js/jquery.blockUI.js"></script>
+  <script src="<?=base_url();?>/public/assets/js/waves.js"></script>
+  <script src="<?=base_url();?>/public/assets/js/wow.min.js"></script>
+  <script src="<?=base_url();?>/public/assets/js/jquery.nicescroll.js"></script>
+  <script src="<?=base_url();?>/public/assets/js/jquery.scrollTo.min.js"></script>
+
+  <script src="<?=base_url();?>/public/assets/js/jquery.core.js"></script>
+  <script src="<?=base_url();?>/public/assets/js/jquery.app.js"></script>
+
+  <script src="<?=base_url();?>/public/assets/plugins/morris/morris.min.js"></script>
+  <script src="<?=base_url();?>/public/assets/plugins/raphael/raphael-min.js"></script>
+
+  <script src="<?=base_url();?>/public/assets/pages/jquery.dashboard_ecommerce.js"></script>
+
+
+<?php
+  /** -- Copy from here -- */
+
+  if(!empty($canonical))
+  {
+    echo "\n\t\t";
+    ?><link rel="canonical" href="<?php echo $canonical?>" /><?php
+
+  }
+  echo "\n\t";
+
+  foreach($js as $file){
+      echo "\n\t\t";
+      ?><script src="<?php echo $file; ?>"></script><?php
+  } echo "\n\t";
+
+  /** -- to here -- */
+?>
+
+</html>
