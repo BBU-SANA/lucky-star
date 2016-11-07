@@ -20,6 +20,11 @@ class Admin extends CI_Controller {
 	{
 		$this->output->set_title('Dashboard');
 		$this->load->view('admin/dashboard');
+
+		$this->load->js('public/assets/plugins/morris/morris.min.js');
+		$this->load->js('public/assets/plugins/raphael/raphael-min.js');
+		$this->load->js('public/assets/pages/jquery.dashboard_ecommerce.js');
+
 	}
 
 	public function viewuser()

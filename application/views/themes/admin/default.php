@@ -304,12 +304,7 @@
   <script src="<?=base_url();?>/public/assets/js/jquery.core.js"></script>
   <script src="<?=base_url();?>/public/assets/js/jquery.app.js"></script>
 
-  <script src="<?=base_url();?>/public/assets/plugins/morris/morris.min.js"></script>
-  <script src="<?=base_url();?>/public/assets/plugins/raphael/raphael-min.js"></script>
-
-  <script src="<?=base_url();?>/public/assets/pages/jquery.dashboard_ecommerce.js"></script>
-
-
+  
 <?php
   /** -- Copy from here -- */
 

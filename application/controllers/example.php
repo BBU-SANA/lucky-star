@@ -13,7 +13,7 @@ class Example extends CI_Controller {
 
 	private function _init()
 	{
-		$this->output->set_template('default');
+		$this->output->set_template('default1');
 
 		$this->load->js('assets/themes/default/js/jquery-1.9.1.min.js');
 		$this->load->js('assets/themes/default/hero_files/bootstrap-transition.js');
@@ -27,7 +27,6 @@ class Example extends CI_Controller {
 
 	public function example_1()
 	{
-		$this->output->set_title('test');
 		$this->load->view('ci_simplicity/example_1');
 	}
 

@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Sign In</title>
-	
-	<!-- link to css url -->
-	<?php $this->load->view('admin/layouts/head-url') ?>
-
-</head>
-<body>
 
 	<div class="account-pages"></div>
 	<div class="clearfix"></div>
@@ -91,10 +81,3 @@
 		</div>
 
 	</div>
-
-</body>
-
-<!-- link to js url -->
-<?php $this->load->view('admin/layouts/foot-url') ?>
-
-</html>
