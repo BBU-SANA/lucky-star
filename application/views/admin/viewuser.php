@@ -31,11 +31,10 @@
                                 </form>
                             </div>
                             <div class="col-sm-4">
-                                <a href="<?php echo site_url('admin/adduser');?>" class="btn btn-default btn-md waves-effect waves-light m-b-30" data-animation="fadein"
-                                    data-plugin="custommodal" data-overlaySpeed="200" data-overlayColor="#36404a"><i class="md md-add"></i> Add User</a>
+                                <a href="<?php echo site_url('admin/user/adduser');?>" class="btn btn-default btn-md waves-effect waves-light m-b-30"><i class="md md-add"></i> Add User</a>
                             </div>
                         </div>
-
+<?php echo $r->username; ?>
                         <div class="table-responsive">
                             <table class="table table-hover mails m-0 table table-actions-bar">
                                 <thead>
@@ -88,8 +87,7 @@
                                         <td><?php echo $row->role ?></td>
                                         <td><?php if($row->active=='1')echo "Enable"; else echo "Disable"; ?></td>
                                         <td>
-                                            <a href="#" class="table-action-btn"><i class="md md-edit" data-toggle="modal" data-target="#con-close-modal" 
-                                            onclick="<?php $this->user->getUserById($row->uid); ?>"></i></a>
+                                            <a href=""><i class="md md-edit" class="table-action-btn" data-toggle="modal" data-target="#con-close-modal"></i></a>
                                             <a href="#" class="table-action-btn"><i class="md md-close"></i></a>
                                         </td>
                                     </tr>
@@ -111,13 +109,29 @@
     </div>
     <!-- content -->
 
-    <form role="form" method="post" action="<?php echo site_url('settings/user/updateUser'); ?>" data-parsley-validate novalidate>
+    <footer class="footer text-right">
+        © 2016. All rights reserved.
+    </footer>
+
+</div>
+
+<!-- ============================================================== -->
+<!-- End Right content here -->
+
+    <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog"> 
+            <div class="modal-content"> 
+                <div class="modal-header"> 
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button> 
+                    <h4 class="modal-title">Update User Information</h4> 
+                </div>
+                <form role="form" method="post" action="<?php echo site_url('admin/user/edit'); ?>" data-parsley-validate novalidate>
                     <div class="modal-body">
                         <div class="row"> 
                             <div class="col-md-12"> 
                                 <div class="form-group"> 
                                     <label for="field-3" class="control-label">User Name *</label> 
-                                    <input type="text" class="form-control" id="field-3" parsley-trigger="change" value="<?php echo $r->username; ?>" required> 
+                                    <input type="text" class="form-control" id="field-3" parsley-trigger="change" value="<?php echo $row->username; ?>" required> 
                                 </div> 
                             </div> 
                         </div> 
@@ -229,17 +243,9 @@
                         <button class="btn btn-primary waves-effect waves-light" type="submit">Save Changes</button>
                     </div>
                 </form> 
-
-    <footer class="footer text-right">
-        © 2016. All rights reserved.
-    </footer>
-
-</div>
-
-<!-- ============================================================== -->
-<!-- End Right content here -->
-
-
+            </div> 
+        </div>
+    </div><!-- /.modal -->
 
 
     <!-- Modal change password form -->

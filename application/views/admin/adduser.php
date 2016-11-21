@@ -24,7 +24,7 @@
 					<div class="col-sm-12">
 						<div class="card-box">
 							<form id="wizard-validation-form" action="<?php echo 
-                            site_url('settings/user/addUser');
+                            site_url('admin/user/savedata');
                             ?>" method="post">
                                 <div>
                                     <h3>Step 1</h3>
@@ -166,19 +166,20 @@
                                         </div>
 
                                     </section>
-<script>
-    // output some informations to step3
-    $(document).ready(function(){
-        $("input").change(function(){
-        $("#usernameOutput").text($("input[name='username']").val());
-        $("#firstnameOutput").text($("input[name='firstname']").val());
-        $("#lastnameOutput").text($("input[name='lastname']").val());
-        $("#emailOutput").text($("input[name='email']").val());
-        $("#addressOutput").text($("input[name='address']").val());
-        $("#phoneOutput").text($("input[name='phone']").val());
-        });
-    });
-</script>
+                                    
+                                    <script>
+                                        // output some informations to step3
+                                        $(document).ready(function(){
+                                            $("input").change(function(){
+                                            $("#usernameOutput").text($("input[name='username']").val());
+                                            $("#firstnameOutput").text($("input[name='firstname']").val());
+                                            $("#lastnameOutput").text($("input[name='lastname']").val());
+                                            $("#emailOutput").text($("input[name='email']").val());
+                                            $("#addressOutput").text($("input[name='address']").val());
+                                            $("#phoneOutput").text($("input[name='phone']").val());
+                                            });
+                                        });
+                                    </script>
 
                                     <h3>Step 3</h3>
                                     <section>
@@ -228,12 +229,11 @@
 		var password = $("#password2").val();
 		var confirmPassword = $("#confirm2").val();
 		if (password != confirmPassword) {
-			$("#divCheckPasswordMatch").html("<font color='red'>Passwords do not match!</font>");
+			$("#divCheckPasswordMatch").html("<font color='red' size='2'>Passwords do not match!</font>");
 			$("#confirm2").val("");
 		} else
 			$("#divCheckPasswordMatch").html("");
 	}
 
 </script>
-
 

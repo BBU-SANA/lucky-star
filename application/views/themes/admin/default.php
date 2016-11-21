@@ -28,6 +28,7 @@
     <!--Morris Chart CSS -->
     <link rel="stylesheet" href="<?=base_url();?>public/assets/plugins/morris/morris.css">
 
+    <link href="<?=base_url();?>public/assets/plugins/sweetalert/dist/sweetalert.css" rel="stylesheet" type="text/css">
     <link href="<?=base_url();?>public/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="<?=base_url();?>public/assets/css/core.css" rel="stylesheet" type="text/css" />
     <link href="<?=base_url();?>public/assets/css/components.css" rel="stylesheet" type="text/css" />
@@ -222,8 +223,8 @@
                     <li class="has_sub">
                         <a href="javascript:void(0);" class="waves-effect"><i class="ti-user"></i> <span> Users </span> <span class="menu-arrow"></span></a>
                         <ul class="list-unstyled">
-                            <li><a href="<?php echo site_url('admin/viewuser');?>">Users List</a></li>
-                            <li><a href="<?php echo site_url('admin/adduser');?>">Add Users</a></li>
+                            <li><a href="<?php echo site_url('admin/user/viewuser');?>">Users List</a></li>
+                            <li><a href="<?php echo site_url('admin/user/adduser');?>">Add Users</a></li>
                         </ul>
                     </li>
 
@@ -303,6 +304,8 @@
 
   <script src="<?=base_url();?>/public/assets/js/jquery.core.js"></script>
   <script src="<?=base_url();?>/public/assets/js/jquery.app.js"></script>
+
+  <script src="<?=base_url();?>/public/assets/plugins/sweetalert/dist/sweetalert.min.js"></script>
 
   
 <?php

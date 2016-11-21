@@ -49,7 +49,15 @@
             },
             onFinished: function (event, currentIndex) {
                 // alert("Submitted!");
-                $("#wizard-validation-form").submit();
+                swal({
+                    title : "Success!",
+                    text : "User has been inserted.",
+                    type : "success",
+                    timer : 2000,
+                    showConfirmButton : false
+                }, function() {
+                    $("#wizard-validation-form").submit();
+                });
             }
         });
 

@@ -78,7 +78,7 @@ class User extends CI_Controller {
         
         $this->db->insert('users', $data);
         
-        redirect('admin/viewuser','refresh');
+        redirect('admin/user/viewuser','refresh');
         
     }
 
