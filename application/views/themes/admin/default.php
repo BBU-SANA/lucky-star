@@ -325,3 +325,16 @@
 ?>
 
 </html>
+
+<script>
+    jQuery(document).ready(function() {
+        
+        // Date Picker
+        jQuery('#datepicker').datepicker({
+            format: "yyyy-mm-dd",
+            startView: 2,
+            autoclose: true
+        });
+
+    })
+</script>

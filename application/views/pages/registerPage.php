@@ -12,7 +12,7 @@
 
 				<div class="form-group ">
 					<div class="col-xs-12">
-						<input class="form-control" type="email" required="" placeholder="Email">
+						<input class="form-control" type="email" required="" placeholder="Email Address">
 					</div>
 				</div>
 
@@ -30,6 +30,12 @@
 
 				<div class="form-group">
 					<div class="col-xs-12">
+						<input class="form-control" type="password" required="" placeholder="Confirm Password">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-xs-12">
 						<div class="checkbox checkbox-primary">
 							<input id="checkbox-signup" type="checkbox" checked="checked">
 							<label for="checkbox-signup">I accept <a href="#">Terms and Conditions</a></label>
@@ -39,7 +45,7 @@
 
 				<div class="form-group text-center m-t-40">
 					<div class="col-xs-12">
-						<button class="btn btn-pink btn-block text-uppercase waves-effect waves-light" type="submit">
+						<button class="btn btn-primary btn-block text-uppercase waves-effect waves-light" type="submit">
 							Register
 						</button>
 					</div>
