@@ -86,7 +86,12 @@ class User extends CI_Controller {
     {
         $row = $this->user->getUserById($id);
         $data['r'] = $row;
-        $this->load->view('admin/viewuser', $data);
+        $this->load->view('admin/edituser', $data);
+        $this->Mylibraries();
+
+		// $this->load->css('public/assets/plugins/custombox/dist/custombox.min.css');
+		// $this->load->js('public/assets/plugins/custombox/dist/custombox.min.js');
+		// $this->load->js('public/assets/plugins/custombox/dist/legacy.min.js');
         
     }
 
