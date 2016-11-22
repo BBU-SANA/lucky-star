@@ -11,7 +11,10 @@ class User_model extends CI_Model {
     
     function getUsers()
     {
+        
+        $this->db->order_by('uid', 'desc');
         $query = $this->db->get('users');
+        
         return $query->result();
     }
 

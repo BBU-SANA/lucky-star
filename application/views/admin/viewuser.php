@@ -20,82 +20,68 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card-box">
-                        <div class="row">
-                            <div class="col-sm-8">
-                                <form role="form">
-                                    <div class="form-group contact-search m-b-30">
-                                        <input type="text" id="search" class="form-control" placeholder="Search...">
-                                        <button type="submit" class="btn btn-white"><i class="fa fa-search"></i></button>
+                        <table id="demo-foo-addrow" class="table table-striped m-b-0 table-hover toggle-circle" data-page-size="10">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Username</th>
+                                    <th>FirstName</th>
+                                    <th>LastName</th>
+                                    <th>Email</th>
+                                    <th>Type</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <div class="pad-btm form-inline">
+                                <div class="row">
+                                    <div class="col-sm-6 text-xs-center">
+                                        <div class="form-group">
+                                            <button class="btn btn-default m-b-20" onclick="javascript:location.href='<?php echo site_url('admin/user/adduser');?>'"><i class="fa fa-plus m-r-5"></i> Add New</button>
+                                        </div>
                                     </div>
-                                    <!-- form-group -->
-                                </form>
+                                    <div class="col-sm-6 text-xs-center text-right">
+                                        <div class="form-group">
+                                            <input id="demo-input-search2" type="text" placeholder="Search" class="form-control  input-sm" autocomplete="off">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-sm-4">
-                                <a href="<?php echo site_url('admin/user/adduser');?>" class="btn btn-default btn-md waves-effect waves-light m-b-30"><i class="md md-add"></i> Add User</a>
-                            </div>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table table-hover mails m-0 table table-actions-bar">
-                                <thead>
-                                    <tr>
-                                        <th style="min-width: 95px;">
-                                            <div class="checkbox checkbox-primary checkbox-single m-r-15">
-                                                <input id="action-checkbox" type="checkbox">
-                                                <label for="action-checkbox"></label>
-                                            </div>
-                                            <div class="btn-group dropdown">
-                                                <button type="button" class="btn btn-white btn-xs dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="false"><i class="caret"></i></button>
-                                                <!--<ul class="dropdown-menu" role="menu">
-                                                    <li><a href="#">Action</a></li>
-                                                    <li><a href="#">Another action</a></li>
-                                                    <li><a href="#">Something else here</a></li>
-                                                    <li class="divider"></li>
-                                                    <li><a href="#">Separated link</a></li>
-                                                </ul>-->
-                                            </div>
-                                        </th>
-                                        <th>Username</th>
-                                        <th>FirstName</th>
-                                        <th>LastName</th>
-                                        <th>Email</th>
-                                        <th>Type</th>
-                                        <th>Status</th>
-                                        <th style="min-width: 90px;">Action</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <?php
-                                        foreach($this->user->getUsers() as $row)
-                                        {
-                                    ?>
-                                    <tr>
-                                        <td>
-                                            <div class="checkbox checkbox-primary m-r-15">
-                                                <input id="checkbox1" type="checkbox">
-                                                <label for="checkbox1"></label>
-                                            </div>
-
-                                            <img src="<?=base_url();?>public/assets/images/users/avatar-1.jpg" alt="contact-img" title="contact-img" class="img-circle thumb-sm"
-                                            />
-                                        </td>
-                                        <td><?php echo $row->username ?></td>
-                                        <td><?php echo $row->firstname ?></td>
-                                        <td><?php echo $row->lastname ?></td>
-                                        <td><?php echo $row->email ?></td>
-                                        <td><?php echo $row->role ?></td>
-                                        <td><?php if($row->active=='1')echo "Enable"; else echo "Disable"; ?></td>
-                                        <td>
-                                            <a href="<?php echo site_url('admin/user/edit/'.$row->uid); ?>"><i class="md md-edit" class="table-action-btn" data-toggle="modal" data-target="#con-close-modal"></i></a>
-                                            <a href="#" class="table-action-btn"><i class="md md-close"></i></a>
-                                        </td>
-                                    </tr>
-                                    <?php 
-                                        } 
-                                    ?>
-                                </tbody>
-                            </table>
-                        </div>
+                            <tbody>
+                                <?php
+                                    foreach($this->user->getUsers() as $row)
+                                    {
+                                ?>
+                                <tr>
+                                    <td>
+                                        <img src="<?=base_url();?>public/assets/images/users/avatar-1.jpg" alt="contact-img" title="contact-img" class="img-circle thumb-sm"
+                                        />
+                                    </td>
+                                    <td><?php echo $row->username ?></td>
+                                    <td><?php echo $row->firstname ?></td>
+                                    <td><?php echo $row->lastname ?></td>
+                                    <td><?php echo $row->email ?></td>
+                                    <td><?php echo $row->role ?></td>
+                                    <td><?php if($row->active=='1')echo "Enable"; else echo "Disable"; ?></td>
+                                    <td style="font-size: 20px">
+                                        <a href="<?php echo site_url('admin/user/edit/'.$row->uid); ?>"><i class="md md-edit"></i></a>
+                                        <a href="#" class="table-action-btn"><i class="md md-close"></i></a>
+                                    </td>
+                                </tr>
+                                <?php 
+                                    } 
+                                ?>                   
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="8">
+                                        <div class="text-right">
+                                            <ul class="pagination pagination-split m-t-30"></ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
                     </div>
 
                 </div>

@@ -21,13 +21,14 @@
             <div class="col-lg-6">
                 <div class="card-box">
                     <h4 class="m-t-0 header-title"><b>User Information</b></h4>  
-                    <form role="form" method="post" action="<?php echo site_url('settings/user/updateUser'); ?>" data-parsley-validate novalidate>
+                    <form role="form" method="post" action="<?php echo site_url('admin/user/update'); ?>" data-parsley-validate novalidate>
+                        <input type="text" name="uid" value="<?php echo $r->uid; ?>" style="display: none;"> 
                         <div class="modal-body">
                             <div class="row"> 
                                 <div class="col-md-12"> 
                                     <div class="form-group"> 
                                         <label for="field-3" class="control-label">User Name *</label> 
-                                        <input type="text" class="form-control" id="field-3" parsley-trigger="change" value="<?php echo $r->username; ?>" required> 
+                                        <input type="text" name="username" class="form-control" id="field-3" parsley-trigger="change" value="<?php echo $r->username; ?>" required> 
                                     </div> 
                                 </div> 
                             </div> 
@@ -35,7 +36,7 @@
                                 <div class="col-md-12"> 
                                     <div class="form-group"> 
                                         <label for="field-3" class="control-label">Email *</label> 
-                                        <input type="email" class="form-control" id="field-3" parsley-trigger="change" required> 
+                                        <input type="email" name="email" class="form-control" id="field-3" parsley-trigger="change" value="<?php echo $r->email; ?>" required> 
                                     </div> 
                                 </div> 
                             </div>  
@@ -43,21 +44,21 @@
                                 <div class="col-md-4"> 
                                     <div class="form-group"> 
                                         <label for="field-4" class="control-label">First Name *</label> 
-                                        <input type="text" class="form-control" id="field-4" parsley-trigger="change" required> 
+                                        <input type="text" name="firstname" class="form-control" id="field-4" parsley-trigger="change" value="<?php echo $r->firstname; ?>" required> 
                                     </div> 
                                 </div> 
                                 <div class="col-md-4"> 
                                     <div class="form-group"> 
                                         <label for="field-5" class="control-label">Last Name *</label> 
-                                        <input type="text" class="form-control" id="field-5" parsley-trigger="change" required> 
+                                        <input type="text" name="lastname" class="form-control" id="field-5" parsley-trigger="change" value="<?php echo $r->lastname; ?>" required> 
                                     </div> 
                                 </div> 
                                 <div class="col-md-4"> 
                                     <div class="form-group"> 
                                         <label for="field-6" class="control-label">Gender</label> 
                                         <select class="selectpicker form-control" data-style="btn-white" name="gender">
-                                            <option>Male</option>
-                                            <option>Female</option>
+                                            <option <?php if($r->gender=="Male") echo 'selected'; ?> value="Male">Male</option>
+                                            <option <?php if($r->gender=="Female") echo 'selected'; ?> value="Female">Female</option>
                                         </select> 
                                     </div> 
                                 </div> 
@@ -67,7 +68,7 @@
                                     <div class="form-group"> 
                                         <label for="field-3" class="control-label">Date of Birth</label> 
                                         <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="YYYY-MM-DD" id="datepicker" name="dob">
+                                            <input type="text" class="form-control" placeholder="YYYY-MM-DD" id="datepicker" name="dob" value="<?php echo $r->dob; ?>">
                                             <span class="input-group-addon bg-custom b-0 text-white"><i class="icon-calender"></i></span>
                                         </div>
                                     </div> 
@@ -77,7 +78,7 @@
                                 <div class="col-md-12"> 
                                     <div class="form-group"> 
                                         <label for="field-3" class="control-label">Address</label> 
-                                        <input type="text" class="form-control" id="field-3"> 
+                                        <input type="text" name="address" class="form-control" id="field-3" value="<?php echo $r->address; ?>"> 
                                     </div> 
                                 </div> 
                             </div> 
@@ -85,7 +86,7 @@
                                 <div class="col-md-12"> 
                                     <div class="form-group"> 
                                         <label for="field-3" class="control-label">Phone</label> 
-                                        <input type="text" class="form-control" id="field-3"> 
+                                        <input type="text" name="phone" class="form-control" id="field-3" value="<?php echo $r->phone; ?>"> 
                                     </div> 
                                 </div> 
                             </div> 
@@ -93,7 +94,7 @@
                                 <div class="col-md-12"> 
                                     <div class="form-group"> 
                                         <label for="field-3" class="control-label">Personal Info</label> 
-                                        <input type="text" class="form-control" id="field-3"> 
+                                        <input type="text" name="comment" class="form-control" id="field-3" value="<?php echo $r->comment; ?>"> 
                                     </div> 
                                 </div> 
                             </div> 
@@ -103,11 +104,11 @@
                                         <label class="col-lg-3 control-label " for="role">Role </label>
                                         <div class="col-lg-9">
                                             <div class="radio radio-custom radio-inline">
-                                                <input type="radio" id="inlineRadio1" value="admin" name="role" checked>
+                                                <input type="radio" id="inlineRadio1" <?php if($r->role=="admin") echo 'checked'; ?> value="admin" name="role" checked>
                                                 <label for="inlineRadio1"> Admin </label>
                                             </div>
                                             <div class="radio radio-inline">
-                                                <input type="radio" id="inlineRadio2" value="buyer" name="role">
+                                                <input type="radio" id="inlineRadio2" <?php if($r->role=="buyer") echo 'checked'; ?> value="buyer" name="role">
                                                 <label for="inlineRadio2"> Buyer </label>
                                             </div>
                                         </div>
@@ -116,11 +117,11 @@
                                         <label class="col-lg-3 control-label " for="active">Active </label>
                                         <div class="col-lg-9">
                                             <div class="radio radio-inline radio-custom">
-                                                <input type="radio" name="active" id="radio1" value="1" checked>
+                                                <input type="radio" name="active" id="radio1" <?php if($r->active==1) echo 'checked'; ?> value="1" checked>
                                                 <label for="radio1">Enable</label>
                                             </div>
                                             <div class="radio radio-inline">
-                                                <input type="radio" name="active" id="radio2" value="0">
+                                                <input type="radio" name="active" id="radio2" <?php if($r->active==0) echo 'checked'; ?> value="0">
                                                 <label for="radio2">Disable</label>
                                             </div>
                                         </div>
@@ -135,10 +136,10 @@
                             </div> 
                         </div> 
                         <div class="form-group text-right m-b-0">
-                            <button class="btn btn-primary waves-effect waves-light" type="submit">
+                            <button class="btn btn-primary waves-effect waves-light" type="submit" id="save-user">
                                 Save Change
                             </button>
-                            <button type="reset" class="btn btn-default waves-effect waves-light m-l-5">
+                            <button type="reset" class="btn btn-default waves-effect waves-light m-l-5" onclick="javascript:location.href='<?php echo site_url('admin/user/viewuser'); ?>'">
                                 Cancel
                             </button>
                         </div>
@@ -178,7 +179,7 @@
                                 <button type="submit" class="btn btn-primary waves-effect waves-light">
                                     Save Change
                                 </button>
-                                <button type="reset" class="btn btn-default waves-effect waves-light m-l-5">
+                                <button type="reset" class="btn btn-default waves-effect waves-light m-l-5" onclick="javascript:location.href='<?php echo site_url('admin/user/viewuser'); ?>'">
                                     Cancel
                                 </button>
                             </div>
@@ -193,4 +194,6 @@
         © 2016. All rights reserved.
     </footer>
 </div>
+
+
 

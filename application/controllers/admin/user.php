@@ -15,46 +15,6 @@ class User extends CI_Controller {
         
 	}
 
-    private function _init()
-	{
-		$this->output->set_template('admin/default');
-	}
-
-	public function index()
-	{
-		$this->output->set_title('Dashboard');
-		$this->load->view('admin/dashboard');
-
-		$this->load->js('public/assets/plugins/morris/morris.min.js');
-		$this->load->js('public/assets/plugins/raphael/raphael-min.js');
-		$this->load->js('public/assets/pages/jquery.dashboard_ecommerce.js');
-
-	}
-
-    public function viewuser()
-	{
-		$this->load->view('admin/viewuser');
-        $this->Mylibraries();
-
-		$this->load->css('public/assets/plugins/custombox/dist/custombox.min.css');
-		$this->load->js('public/assets/plugins/custombox/dist/custombox.min.js');
-		$this->load->js('public/assets/plugins/custombox/dist/legacy.min.js');
-	}
-
-	public function adduser()
-	{
-		$this->load->view('admin/adduser');
-		$this->Mylibraries();
-
-        $this->load->css('public/assets/plugins/jquery.steps/demo/css/jquery.steps.css');
-        $this->load->js('public/assets/plugins/jquery.steps/build/jquery.steps.min.js');
-        $this->load->js('public/assets/plugins/jquery-validation/dist/jquery.validate.min.js');
-        $this->load->js('public/assets/pages/jquery.wizard-init.js');
-	}
-
-
-
-
     /**
     * USER ACTION ADD SELECT DELECT UPDATE 
     **/
@@ -88,14 +48,74 @@ class User extends CI_Controller {
         $data['r'] = $row;
         $this->load->view('admin/edituser', $data);
         $this->Mylibraries();
+        
+    }
 
-		// $this->load->css('public/assets/plugins/custombox/dist/custombox.min.css');
-		// $this->load->js('public/assets/plugins/custombox/dist/custombox.min.js');
-		// $this->load->js('public/assets/plugins/custombox/dist/legacy.min.js');
+    function update()
+    { 
+        $id = $this->input->post('uid');
+        $data = array(
+            'username' => $this->input->post('username'),
+            'email'    => $this->input->post('email'),
+            'password' => md5($this->input->post('password')),
+            'firstname'=> $this->input->post('firstname'),
+            'lastname' => $this->input->post('lastname'),
+            'gender'   => $this->input->post('gender'),
+            'dob'      => $this->input->post('dob'),
+            'address'  => $this->input->post('address'),
+            'phone'    => $this->input->post('phone'),
+            'role'     => $this->input->post('role'),
+            'active'   => $this->input->post('active'),
+            'comment'  => $this->input->post('comment')
+        );
+        
+        $this->db->where('uid', $id);
+        $this->db->update('users', $data);
+
+        redirect('admin/user/viewuser','refresh');
         
     }
 
 
+    // LINK TO USER CONTROLLER INTERFACE
+    private function _init()
+	{
+		$this->output->set_template('admin/default');
+	}
+
+	public function index()
+	{
+		$this->output->set_title('Dashboard');
+		$this->load->view('admin/dashboard');
+
+		$this->load->js('public/assets/plugins/morris/morris.min.js');
+		$this->load->js('public/assets/plugins/raphael/raphael-min.js');
+		$this->load->js('public/assets/pages/jquery.dashboard_ecommerce.js');
+
+	}
+
+    public function viewuser()
+	{
+		$this->load->view('admin/viewuser');
+        $this->Mylibraries();
+        $this->load->css('public/assets/plugins/footable/css/footable.core.css');
+        $this->load->js('public/assets/plugins/footable/js/footable.all.min.js');
+        $this->load->js('public/assets/pages/jquery.footable.js');
+		$this->load->css('public/assets/plugins/custombox/dist/custombox.min.css');
+		$this->load->js('public/assets/plugins/custombox/dist/custombox.min.js');
+		$this->load->js('public/assets/plugins/custombox/dist/legacy.min.js');
+	}
+
+	public function adduser()
+	{
+		$this->load->view('admin/adduser');
+		$this->Mylibraries();
+
+        $this->load->css('public/assets/plugins/jquery.steps/demo/css/jquery.steps.css');
+        $this->load->js('public/assets/plugins/jquery.steps/build/jquery.steps.min.js');
+        $this->load->js('public/assets/plugins/jquery-validation/dist/jquery.validate.min.js');
+        $this->load->js('public/assets/pages/jquery.wizard-init.js');
+	}
 
     // SOME LIBRARIES USE IN USER CONTROLLER
     function Mylibraries()
@@ -109,5 +129,7 @@ class User extends CI_Controller {
 		$this->load->js('public/assets/plugins/bootstrap-select/dist/js/bootstrap-select.min.js');
 		$this->load->js('public/assets/plugins/bootstrap-filestyle/src/bootstrap-filestyle.min.js');
         $this->load->js('public/assets/plugins/parsleyjs/dist/parsley.min.js');
+        
+        $this->load->js('public/assets/js/script.custom.js');
     }
 }
