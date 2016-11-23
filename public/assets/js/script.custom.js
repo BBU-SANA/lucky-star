@@ -1,5 +1,5 @@
 
-var base_url = 'http://localhost:2222/lucky-star-computer-php';
+var base_url = 'http://localhost:2222/lucky-star/';
 
 jQuery(document).ready(function() {
         
@@ -26,13 +26,12 @@ $(document).ready(function() {
         });
     });
 });
-      
 
 function confirmDelete(id){
     swal({
         title: "Are you sure?",
         text: "You won't be able to delete this!",
-        type: "info",
+        type: "warning",
         showCancelButton: true,
         closeOnConfirm: false,
         showLoaderOnConfirm: true,
@@ -40,7 +39,7 @@ function confirmDelete(id){
         function(){
         setTimeout(function(){
             $.ajax({
-                url: base_url + "/admin/user/delete/" + id,
+                url: base_url + "admin/user/delete/" + id,
                 type: "DELETE",
                 dataType:"HTML",
                 success: function () {
