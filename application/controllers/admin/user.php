@@ -76,6 +76,16 @@ class User extends CI_Controller {
         
     }
 
+    function delete($id)
+    {
+        $id = $this->db->where('uid', $id);
+        
+        $this->db->delete('users');  
+
+        redirect('admin/user/viewuser','refresh');
+    }
+    
+
 
     // LINK TO USER CONTROLLER INTERFACE
     private function _init()

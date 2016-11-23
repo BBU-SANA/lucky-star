@@ -229,6 +229,14 @@
                     </li>
 
                     <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect"><i class="ti-truck"></i> <span> Suppliers </span> <span class="menu-arrow"></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="<?php echo site_url('admin/supplier/viewsupplier');?>">Suppliers List</a></li>
+                            <li><a href="<?php echo site_url('admin/supplier/addsupplier');?>">Add Suppliers</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has_sub">
                         <a href="javascript:void(0);" class="waves-effect"><i class="ti-pencil-alt"></i> <span> Categories </span> <span class="menu-arrow"></span></a>
                         <ul class="list-unstyled">
                             <li><a href="<?php echo site_url('admin/viewcategory');?>">Categories List</a></li>
@@ -262,6 +270,13 @@
                         <ul class="list-unstyled">
                             <li><a href="<?php echo site_url('admin/invoice');?>">Sale Invoice</a></li>
                         </ul>
+                    </li>
+
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect"><i class="ti-settings"></i> <span> Settings </span> <span class="menu-arrow"></span></a>
+                        <!--<ul class="list-unstyled">
+                            <li><a href="<?php //echo site_url('admin/invoice');?>">Slider</a></li>
+                        </ul>-->
                     </li>
                 </ul>
                 <div class="clearfix"></div>

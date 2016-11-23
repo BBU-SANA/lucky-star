@@ -65,7 +65,7 @@
                                     <td><?php if($row->active=='1')echo "Enable"; else echo "Disable"; ?></td>
                                     <td style="font-size: 20px">
                                         <a href="<?php echo site_url('admin/user/edit/'.$row->uid); ?>"><i class="md md-edit"></i></a>
-                                        <a href="#" class="table-action-btn"><i class="md md-close"></i></a>
+                                        <a href="javascript:void(0);" onclick="confirmDelete('<?php echo $row->uid; ?>');" class="table-action-btn"><i class="md md-close"></i></a>
                                     </td>
                                 </tr>
                                 <?php 
@@ -102,3 +102,4 @@
 
 <!-- ============================================================== -->
 <!-- End Right content here -->
+

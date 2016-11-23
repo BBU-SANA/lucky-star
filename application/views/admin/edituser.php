@@ -21,7 +21,7 @@
             <div class="col-lg-6">
                 <div class="card-box">
                     <h4 class="m-t-0 header-title"><b>User Information</b></h4>  
-                    <form role="form" method="post" action="<?php echo site_url('admin/user/update'); ?>" data-parsley-validate novalidate>
+                    <form role="form" id="update-form" method="post" action="<?php echo site_url('admin/user/update'); ?>" data-parsley-validate novalidate>
                         <input type="text" name="uid" value="<?php echo $r->uid; ?>" style="display: none;"> 
                         <div class="modal-body">
                             <div class="row"> 
@@ -93,13 +93,21 @@
                             <div class="row"> 
                                 <div class="col-md-12"> 
                                     <div class="form-group"> 
+                                        <label for="field-2" class="control-label">Photo</label> 
+                                        <input type="file" class="filestyle" data-buttonname="btn-white">
+                                    </div> 
+                                </div> 
+                            </div>  
+                            <div class="row"> 
+                                <div class="col-md-12"> 
+                                    <div class="form-group"> 
                                         <label for="field-3" class="control-label">Personal Info</label> 
                                         <input type="text" name="comment" class="form-control" id="field-3" value="<?php echo $r->comment; ?>"> 
                                     </div> 
                                 </div> 
                             </div> 
                             <div class="row"> 
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group clearfix">
                                         <label class="col-lg-3 control-label " for="role">Role </label>
                                         <div class="col-lg-9">
@@ -126,17 +134,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div> 
-                                <div class="col-md-6"> 
-                                    <div class="form-group"> 
-                                        <label for="field-2" class="control-label">Photo</label> 
-                                        <input type="file" class="filestyle" data-buttonname="btn-white">
-                                    </div> 
-                                </div> 
-                            </div> 
-                        </div> 
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="form-group text-right m-b-0">
-                            <button class="btn btn-primary waves-effect waves-light" type="submit" id="save-user">
+                            <button type="submit" id="save-user" class="btn btn-primary waves-effect waves-light">
                                 Save Change
                             </button>
                             <button type="reset" class="btn btn-default waves-effect waves-light m-l-5" onclick="javascript:location.href='<?php echo site_url('admin/user/viewuser'); ?>'">

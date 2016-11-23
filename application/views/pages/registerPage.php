@@ -9,22 +9,30 @@
 
 		<div class="panel-body">
 			<form class="form-horizontal m-t-20" action="http://coderthemes.com/ubold_1.6/light/index.html">
-
 				<div class="form-group ">
-					<div class="col-xs-12">
-						<input class="form-control" type="email" required="" placeholder="Email Address">
+					<div class="col-xs-6">
+						<input class="form-control" name="firstname" type="text" required="" placeholder="First Name">
+					</div>
+					<div class="col-xs-6">
+						<input class="form-control" name="lastname" type="text" required="" placeholder="Last Name">
 					</div>
 				</div>
 
 				<div class="form-group ">
 					<div class="col-xs-12">
-						<input class="form-control" type="text" required="" placeholder="Username">
+						<input class="form-control" name="email" type="email" required="" placeholder="Email Address">
+					</div>
+				</div>
+
+				<div class="form-group ">
+					<div class="col-xs-12">
+						<input class="form-control" name="username" type="text" required="" placeholder="Username">
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="col-xs-12">
-						<input class="form-control" type="password" required="" placeholder="Password">
+						<input class="form-control" name="password" type="password" required="" placeholder="Password">
 					</div>
 				</div>
 
@@ -51,7 +59,7 @@
 					</div>
 				</div>
 				
-				<div class="form-group m-t-20 m-b-0">
+				<!--<div class="form-group m-t-20 m-b-0">
 					<div class="col-sm-12 text-center">
 						<h4><b>Sign Up with</b></h4>
 					</div>
@@ -71,7 +79,7 @@
                            <i class="fa fa-google-plus m-r-5"></i> Google+
                         </button>
 					</div>
-				</div>
+				</div>-->
 		
 
 			</form>
